@@ -1,0 +1,29 @@
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#song{
+    width: 300px;
+    padding: 4px;
+    align-content: center;
+    text-align: center;
+    border-radius:  5px 0 0 5px;
+    border: 1px solid black;
+
+}
+#queue-button{
+    text-align: center;
+    padding: 4px;
+    background: white;
+    border: 1px solid black;
+    margin-left: -5px;
+    border-radius: 0 5px 5px 0;
+}
+#queue-button:hover{
+    transition: 0.5s;
+    background: silver;
+}

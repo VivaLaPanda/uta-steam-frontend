@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>index</title>
+        <link rel="stylesheet" href="style/index.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div>
+            <div>
+                <audio controls autoplay id="audio-player" >
+                    <source src="http://localhost:9090/stream.mp3">
+                    Your Browser is not supporting the audio element.
+                </audio>
+            </div>
+        </div>
+        <div>
+            <input type="text" name="song" id="song">
+            <button id="queue-button" onclick="submitToQueue(event)" >Queue</button>
+        </div>
+    </body>
+</html>

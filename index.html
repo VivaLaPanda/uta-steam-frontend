@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>UTA</title>
+        <link rel="stylesheet" href="style/index.css" type="text/css" media="screen" charset="utf-8">
+        <script src="js/errorHandling.js"></script>
+        <script src="js/events.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div>
+        <label for="volume">Volume</label>
+        <input type="range" id="volume" onload="initVolume(event)" oninput="changeVolume(event)" min="0" max="100" >
+        </div>
+        <div>
+            <input type="text" placeholder="paste song url" name="song" id="song">
+            <button id="queue-button" onclick="submitToQueue(event)" >Queue</button>
+        </div>
+        <div style="display:flex">
+            <button class="skip" onclick="skipSong(event)">Skip</button>
+        </div>
+        <div id="error-message-wrapper">
+            <p id="error-message"></p>
+        </div>
+    </body>
+</html>

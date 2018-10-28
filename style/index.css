@@ -13,6 +13,7 @@ body{
     text-align: center;
     border-radius:  5px 0 0 5px;
     border: 1px solid black;
+    transition: 0.5s background;
 
 }
 #queue-button{
@@ -27,3 +28,18 @@ body{
     transition: 0.5s;
     background: silver;
 }
+#error-message-wrapper{
+    display: none;
+    border: red 1px solid;
+    border-radius: 15px;
+    background: rgba(255,0,0,0.3);
+    padding: 5px;
+}
+
+@media (max-width: 400px){
+    #song{
+        width:  70vw;
+    }
+
+}
+

@@ -26,7 +26,7 @@ function submitToQueue(event){
     var inputElement = document.getElementById('song');
     var songUrl = inputElement.value;
     if(songUrl){
-        httpRequest.open('POST', 'https:VivaLaPanda.moe/api/enqueue?song='+ songUrl);
+        httpRequest.open('POST', 'https://VivaLaPanda.moe/api/enqueue?song='+ songUrl);
         httpRequest.onload = submitToQueueResult;
         httpRequest.send();
     }
@@ -37,7 +37,7 @@ function submitToQueue(event){
  */
 function skipSong(event){
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open('POST', 'https:VivaLaPanda.moe/api/skip');
+    httpRequest.open('POST', 'https://VivaLaPanda.moe/api/skip');
     httpRequest.onload = function(){
         if(httpRequest.status == 200 ){
             console.log(httpRequest.response);

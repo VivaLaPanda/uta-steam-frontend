@@ -31,7 +31,7 @@ function initVolume(element){
  */
 function getPlaylistInfo(){
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open('GET', 'https:VivaLaPanda.moe/api/playing');
+    httpRequest.open('GET', 'https://VivaLaPanda.moe/api/playing');
     httpRequest.onload = function(){
         if(httpRequest.status == 200 ){
             console.log(httpRequest.response);

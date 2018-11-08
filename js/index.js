@@ -1,12 +1,5 @@
 window.onload = function(){
-    var audio = new Audio("https://VivaLaPanda.moe/stream.mp3");
-    document.audioPlayer = audio;
-    console.log(audio);
-    var volumeSlider = document.getElementById("volume");
-    initVolume(volumeSlider);
-    audio.volume = 0.1;
-    audio.load();
-    audio.play().catch(autoPlayError);
+    setup();
 }
 
 /**
@@ -16,14 +9,6 @@ window.onload = function(){
  */
 function isString(object){
     return typeof(object) === "string" || object instanceof String;
-}
-
-/**
- * initializes the volume slider at 10% volume.
- * @param element the range input element which is the volume slider.
- */
-function initVolume(element){
-    element.value = 10;
 }
 
 /**
@@ -42,5 +27,75 @@ function getPlaylistInfo(){
     }
     httpRequest.send();
 }
+
+
+
+function setup(){
+    'use strict';
+
+    var audio = $('#audioPlayer')[0];
+    var src = 'https://VivaLaPanda.moe/stream.mp3';
+    audio.volume = $('#audioVolume').val() / 100;
+
+    function preload(imgurl) {
+        $('<img/>').attr('src', imgurl).hide().appendTo('body');
+    }
+
+    preload('assets/img/muted.png');
+    preload('assets/img/play hover.png');
+    preload('assets/img/stop hover.png');
+    $('#audioPlay').hover(function () {
+            this.src = 'assets/img/play hover.png';
+        }, function () {
+            this.src = 'assets/img/play.png';
+        });
+    $('#audioStop').hover(function () {
+            this.src = 'assets/img/stop hover.png';
+        }, function () {
+            this.src = 'assets/img/stop.png';
+        });
+    $.bindAudioControls = function() {
+        $('#audioPlay').off('click');
+        $('#audioStop').off('click');
+        $('#audioMute').off('click');
+        $('#audioVolume').off('input change');
+        $('#audioPlay').click(function () {
+            if (!audio.canPlayType('audio/mpeg')) {
+                alert("Your browser very probably can't play mp3 streams! Stop using Opera.");
+                return;
+            }
+            //This might seem kind of weird, but this is the surest way to beat the
+            //goddamn automatic caching that Firefox kept doing - which itself is
+            //a hard problem to actually run up against; the user has to close the
+            //tab and then open the closed tab (i.e, Ctrl+Shift+T) and resume play,
+            //at which point the play would be resumed from the start of the audio
+            //which had been buffered up until that point, instead of starting fresh.
+            //if (navigator.userAgent.match(/Firefox/)) {
+            var data = $(audio).data('src');
+            audio.src = data ? data : (src + '?nocache=' + Date.now());
+            //}
+            //else
+            //{
+            //    audio.src = src;
+            //}
+            audio.load();
+            audio.play();
+        });
+        $('#audioStop').click(function () {
+            audio.pause();
+            audio.src = '';
+        });
+        $('#audioMute').click(function () {
+            audio.muted = !audio.muted;
+            this.src = audio.muted ? 'assets/img/muted.png' :
+                'assets/img/not-muted.png';
+        });
+        $('#audioVolume').on('input change', function () {
+            audio.volume = this.value / 100;
+        });
+    }
+    $.bindAudioControls();
+    $.signalPageEvent('audioReady', audio);
+};
 
 

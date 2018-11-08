@@ -1,11 +1,142 @@
-
 body{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-image: url("../assets/img/bg-top.jpg");
+  background-repeat: repeat-x;
+  background-color: #cccccc;
 }
+
+#body {
+  background-color: white;
+}
+
+#logo {
+  color: white;
+  margin-top: 6em;
+}
+
+#tagline {
+  margin-left: 2em;
+}
+
+#player {
+    /* background-color: #aaa; */
+    color: #FFF;
+    text-shadow: 0 0 6px #FFFFFF;
+    padding: 5px 5px 20px 5px;
+    /* opacity: 0.75;
+    filter: alpha(opacity=75); */
+    text-align: center;
+    width: 100%;
+}
+
+#status {
+    /* background-color: #aaa; */
+    color: #FFF;
+    text-shadow: 0 0 6px #FFFFFF;
+    padding: 5px 5px 20px 5px;
+    /* opacity: 0.75;
+    filter: alpha(opacity=75); */
+    text-align: center;
+    width: 100%;
+}
+
+.status-small {
+    width: 120px;
+   /*  background-color: #EEE; */
+}
+
+#status a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#status a:hover {
+    color: #EEE;
+}
+
+.status-header {
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+    line-height: 36px;
+}
+
+.status-content {
+    font-size: 0.8em;
+    /* font-family: "Ubuntu Mono", sans-serif; */
+}
+
+#audioControls {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#audioVolume {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 36px;
+    padding: 0;
+}
+
+/* mozilla browsers */
+#audioVolume::-moz-range-track {
+    -moz-appearance: none;
+    border-color: white;
+    background-color: white;
+    width: 150px;
+}
+#audioVolume::-moz-range-thumb {
+    -moz-appearance: none;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: #103875;
+    width: 10px;
+    height: 10px;
+}
+
+/* trident browsers */
+#audioVolume::-ms-track {
+    border-color: white;
+    background-color: white;
+    color: white;
+    width: 150px;
+    height: 2px;
+}
+#audioVolume::-ms-thumb {
+    border-radius: 10px;
+    border: 2px solid white;
+    background: #103875;
+    width: 10px;
+    height: 10px;
+}
+#audioVolume::-ms-tooltip {
+    display: none;
+}
+#audioVolume::-ms-fill-lower {
+    background: white;
+}
+#audioVolume::-ms-fill-upper {
+    background: white;
+}
+
+/* webkit browsers WOW I NEVER THOUGHT I'D HATE SOMETHING MORE THAN IE */
+#audioVolume::-webkit-slider-thumb {
+    -webkit-appearance: none !important; /*why is this !important here?*/
+    border-radius: 10px;
+    border: 2px solid white;
+    background: #103875;
+    width: 14px;
+    height: 14px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #audioVolume {
+        height: 4px;
+        background: white;
+        position: relative;
+        top: -16px;
+        outline: none;
+    }
+}
+
+
 #song{
     width: 300px;
     padding: 4px;

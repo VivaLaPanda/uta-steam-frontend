@@ -25,6 +25,19 @@ body{
 .content-panel {
   background-color: #204794;
   border-radius: 15px;
+  color: white;
+  margin-bottom: 100px;
+}
+
+.tab-pane {
+  min-height: 80vh;
+}
+
+.content-seperator {    
+  background: white;
+  height: 1px;
+  width: 100%;
+  margin-top: 0;
 }
 
 #player {

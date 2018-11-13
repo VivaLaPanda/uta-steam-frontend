@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="row" id ="body">
-          <div class="col-sm-9 content-panel" id="body-content">
+          <div class="col-sm-8 content-panel" id="body-content">
             <ul class="nav nav-tabs" id="body-tabs" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
@@ -51,16 +51,36 @@
             <div class="tab-content" id="body-tab-content">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <!-- Home tab content -->
+                <h5>Intro</h5>
+                <hr class="content-seperator"></hr>
+                <p>
+                  VivaLaPanda.moe is a 24/7 independent online radio station that streams a variety of music. 
+                  The music is either chosen by our users who can queue up tunes, or by resident DJ bot, Marukofu.
+                </p>
+                
+                <a href="">Discord Server</a></br>
+                <a href="">Contact</a></br>
               </div>
               <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab">
                 <!-- Manage tab content -->
+                <div>
+                  <input type="text" placeholder="paste song url" name="song" id="song">
+                  <button id="queue-button" onclick="submitToQueue(event)" >Queue</button>
+                </div>
+                <div style="display:flex">
+                  <button class="skip" onclick="skipSong(event)">Skip</button>
+                </div>
+                <div id="error-message-wrapper">
+                  <p id="error-message"></p>
+                </div>
               </div>
               <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
                 <!-- About tab content -->
               </div>
             </div>
           </div>
-          <div class="col-sm content-panel" id="sidebar">
+          <div class="col-sm"></div>
+          <div class="col-sm-3 content-panel" id="sidebar">
             The playlist goes here
           </div>
         </div>

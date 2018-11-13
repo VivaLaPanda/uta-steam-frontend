@@ -1,11 +1,12 @@
 body{
-  background-image: url("../assets/img/bg-top.jpg");
-  background-repeat: repeat-x;
-  background-color: #cccccc;
+  background-color: #877ECD;
 }
 
-#body {
-  background-color: white;
+#background-art {
+  background-image: url("../assets/img/background.png");
+  background-repeat: none;
+  background-size: cover;
+  background-color: #877ECD;
 }
 
 #logo {
@@ -13,8 +14,17 @@ body{
   margin-top: 6em;
 }
 
+#logo h1{
+  text-shadow: 0 0 50px blueviolet, 0 0 15px blueviolet;
+}
+
 #tagline {
   margin-left: 2em;
+}
+
+.content-panel {
+  background-color: #204794;
+  border-radius: 15px;
 }
 
 #player {

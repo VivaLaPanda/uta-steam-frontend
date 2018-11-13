@@ -7,60 +7,62 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
-      <!-- Content here -->
-      <div class="row" id="header">
-        <div class="col" id="header-content">
-          <div class="row" id="logo">
-            <div class="col">
-              <h1>VivaLaPanda.moe</h1>
-              <p id="tagline">We are gathered here today to discuss this thing called taglines</p>
+    <div class="container-fluid" id="background-art">
+      <div class="container">
+        <!-- Content here -->
+        <div class="row" id="header">
+          <div class="col" id="header-content">
+            <div class="row" id="logo">
+              <div class="col">
+                <h1>VivaLaPanda.moe</h1>
+                <p id="tagline">We are gathered here today to discuss this thing called taglines</p>
+              </div>
             </div>
-          </div>
-          <div class="row" id="player">
-            <div class="col">
-              <div class="centered">
-                <audio id="audioPlayer" preload="none">
-                </audio>
-                <div id="audioControls">
-                  <img id="audioPlay" alt="Play" title="Play" src="assets/img/play.png">
-                  <img id="audioStop" alt="Stop" title="Stop" src="assets/img/stop.png">
-                  <img id="audioMute" alt="Mute" title="Mute" src="assets/img/not-muted.png">
-                  <input id="audioVolume" type="range" min="0" max="100">
+            <div class="row" id="player">
+              <div class="col">
+                <div class="centered">
+                  <audio id="audioPlayer" preload="none">
+                  </audio>
+                  <div id="audioControls">
+                    <img id="audioPlay" alt="Play" title="Play" src="assets/img/play.png">
+                    <img id="audioStop" alt="Stop" title="Stop" src="assets/img/stop.png">
+                    <img id="audioMute" alt="Mute" title="Mute" src="assets/img/not-muted.png">
+                    <input id="audioVolume" type="range" min="0" max="100">
+                  </div>
+                  <div id="status-current-song" class="status-content" style="display: block;">current-song</div>
                 </div>
-                <div id="status-current-song" class="status-content" style="display: block;">current-song</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row" id ="body">
-        <div class="col-sm-9" id="body-content">
-          <ul class="nav nav-tabs" id="body-tabs" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#manage" role="tab" aria-controls="profile" aria-selected="false">Manage</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#about" role="tab" aria-controls="contact" aria-selected="false">About</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="body-tab-content">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <!-- Home tab content -->
-            </div>
-            <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab">
-              <!-- Manage tab content -->
-            </div>
-            <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
-              <!-- About tab content -->
+        <div class="row" id ="body">
+          <div class="col-sm-9 content-panel" id="body-content">
+            <ul class="nav nav-tabs" id="body-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#manage" role="tab" aria-controls="profile" aria-selected="false">Manage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#about" role="tab" aria-controls="contact" aria-selected="false">About</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="body-tab-content">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <!-- Home tab content -->
+              </div>
+              <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab">
+                <!-- Manage tab content -->
+              </div>
+              <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                <!-- About tab content -->
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm" id="sidebar">
-          The playlist goes here
+          <div class="col-sm content-panel" id="sidebar">
+            The playlist goes here
+          </div>
         </div>
       </div>
     </div>

@@ -37,7 +37,15 @@
           </div>
         </div>
         <div class="row" id ="body">
-          <div class="col-sm-8 content-panel" id="body-content">
+          <div class="col-sm-3 content-panel order-sm-last" id="sidebar">
+            <h5 style="margin-top: 10px;">Queue</h5>
+            <hr class="content-seperator"></hr>
+            <p id="queueState">Nothing queued</p>
+            <ol id="upcoming">
+            </ol>
+          </div>
+          <div class="col-sm"></div>
+          <div class="col-sm-8 content-panel order-sm-first" id="body-content">
             <ul class="nav nav-tabs" id="body-tabs" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
@@ -92,14 +100,6 @@
                 <!-- About tab content -->
               </div>
             </div>
-          </div>
-          <div class="col-sm"></div>
-          <div class="col-sm-3 content-panel" id="sidebar">
-            <h5 style="margin-top: 10px;">Queue</h5>
-            <hr class="content-seperator"></hr>
-            <p id="queueState">Nothing queued</p>
-            <ol id="upcoming">
-            </ol>
           </div>
         </div>
       </div>

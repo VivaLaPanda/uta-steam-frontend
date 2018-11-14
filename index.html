@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>UTA</title>
+    <title>VivaLaPanda.moe</title>
     <link rel="stylesheet" href="style/index.css" type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
@@ -64,15 +64,28 @@
               </div>
               <div class="tab-pane fade" id="manage" role="tabpanel" aria-labelledby="manage-tab">
                 <!-- Manage tab content -->
-                <div>
-                  <input type="text" placeholder="paste song url" name="song" id="song">
-                  <button id="queue-button" onclick="submitToQueue(event)" >Queue</button>
-                </div>
-                <div style="display:flex">
-                  <button class="skip" onclick="skipSong(event)">Skip</button>
-                </div>
-                <div id="error-message-wrapper">
-                  <p id="error-message"></p>
+                <h5>Manage Radio</h5>
+                <hr class="content-seperator"></hr>
+                <div style="text-align: center;">
+                  <div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-light" type="button" onclick="submitToQueue(event)" id="queue-btn">Queue</button>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Add items to queue" aria-describedby="queue-btn" placeholder="paste song url" name="song" id="song">
+                    </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-light" type="button" onclick="setApiKey(event)" id="store-key-btn">Store</button>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Set your API key" aria-describedby="store-key-btn" placeholder="paste api key" name="apiKey" id="apiKey">
+                    </div>
+
+                    <button class="skip btn btn-light" onclick="skipSong(event)">Skip</button>
+                  </div>
+                  <div id="error-message-wrapper">
+                    <p id="error-message"></p>
+                  </div>
                 </div>
               </div>
               <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
@@ -82,7 +95,7 @@
           </div>
           <div class="col-sm"></div>
           <div class="col-sm-3 content-panel" id="sidebar">
-            <h5>Queue</h5>
+            <h5 style="margin-top: 10px;">Queue</h5>
             <hr class="content-seperator"></hr>
             <p id="queueState">Nothing queued</p>
             <ol id="upcoming">

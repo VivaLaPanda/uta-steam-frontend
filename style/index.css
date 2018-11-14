@@ -164,17 +164,6 @@ body{
     }
 }
 
-
-#song{
-    width: 300px;
-    padding: 4px;
-    align-content: center;
-    text-align: center;
-    border-radius:  5px 0 0 5px;
-    border: 1px solid black;
-    transition: 0.5s background;
-
-}
 #queue-button{
     text-align: center;
     padding: 4px;
@@ -193,11 +182,4 @@ body{
     border-radius: 15px;
     background: rgba(255,0,0,0.3);
     padding: 5px;
-}
-
-@media (max-width: 400px){
-    #song{
-        width:  70vw;
-    }
-
 }

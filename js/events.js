@@ -1,9 +1,10 @@
+var apiKey = "";
+
 /**
  * display that song was successfully queued.
  */
 function submitToQueueResult(){
     var inputElement = document.getElementById('song');
-    var songUrl = inputElement.value;
     if(this.status == 200 ){
         inputElement.style.background = "green";
         inputElement.value = "Song queued"
@@ -27,6 +28,8 @@ function submitToQueue(event){
     var songUrl = inputElement.value;
     if(songUrl){
         httpRequest.open('POST', 'https://VivaLaPanda.moe/api/enqueue?song='+ songUrl);
+        httpRequest.withCredentials = true;
+        httpRequest.setRequestHeader("Authorization", "Bearer " + apiKey);
         httpRequest.onload = submitToQueueResult;
         httpRequest.send();
     }
@@ -38,6 +41,8 @@ function submitToQueue(event){
 function skipSong(event){
     var httpRequest = new XMLHttpRequest();
     httpRequest.open('POST', 'https://VivaLaPanda.moe/api/skip');
+    httpRequest.withCredentials = true;
+    httpRequest.setRequestHeader("Authorization", "Bearer " + apiKey);
     httpRequest.onload = function(){
         if(httpRequest.status == 200 ){
             console.log(httpRequest.response);
@@ -47,6 +52,14 @@ function skipSong(event){
         }
     }
     httpRequest.send();
+}
+
+/**
+ * skips the current song
+ */
+function setApiKey(event){
+  apiKey = $('#apiKey').val();
+  localStorage.apiKey = apiKey;
 }
 
 /**

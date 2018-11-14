@@ -72,6 +72,9 @@ function setup(){
         $('<img/>').attr('src', imgurl).hide().appendTo('body');
     }
 
+    apiKey = localStorage.apiKey;
+    $('#apiKey').val(apiKey);
+
     preload('assets/img/muted.png');
     preload('assets/img/play hover.png');
     preload('assets/img/stop hover.png');

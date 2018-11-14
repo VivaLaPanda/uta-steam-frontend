@@ -1,5 +1,6 @@
 window.onload = function(){
     setup();
+    getPlaylistInfo();
 }
 
 /**
@@ -29,10 +30,40 @@ function getPlaylistInfo(){
 }
 
 
+function getPlaylistInfo(){
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.open('GET', 'https://VivaLaPanda.moe/api/playing');
+  httpRequest.onload = function(){
+    response = JSON.parse(httpRequest.response)
+    if(httpRequest.status == 200 ){
+      console.log(response);
+      // Set current playing
+      if(response.currentSong.url){
+        $('#status-current-song').html("<a target=\"_blank\" href=\"" + response.currentSong.url + "\"> " + response.currentSong.title + "</a>")
+      } else {
+        $('#status-current-song').html(response.currentSong.title)
+      }
+
+      // Set playlist
+      if (response.upcoming.length != 0) {
+        $('#queueState').html("")
+        playlistRows = response.upcoming.map(function(song) {
+          return "<li>" + "<a target=\"_blank\" href=\"" + song.url + "\"> " + song.title + "</a>" + "</li>\n"
+        })
+        playlistRows = playlistRows.join("")
+        $('#upcoming').html(playlistRows)
+      } else {
+        $('#queueState').html("Nothing queued")
+      }
+    }
+    else{
+      createErrorMessage(httpRequest.responseText);
+    }
+  }
+  httpRequest.send();
+}
 
 function setup(){
-    'use strict';
-
     var audio = $('#audioPlayer')[0];
     var src = 'https://VivaLaPanda.moe/stream.mp3';
     audio.volume = $('#audioVolume').val() / 100;
@@ -59,6 +90,9 @@ function setup(){
         $('#audioStop').off('click');
         $('#audioMute').off('click');
         $('#audioVolume').off('input change');
+        $('#statusRefresh').click(function() {
+          getPlaylistInfo();
+        })
         $('#audioPlay').click(function () {
             if (!audio.canPlayType('audio/mpeg')) {
                 alert("Your browser very probably can't play mp3 streams! Stop using Opera.");
@@ -95,7 +129,4 @@ function setup(){
         });
     }
     $.bindAudioControls();
-    $.signalPageEvent('audioReady', audio);
 };
-
-

@@ -33,7 +33,7 @@ body{
   min-height: 80vh;
 }
 
-.content-seperator {    
+.content-seperator {
   background: white;
   height: 1px;
   width: 100%;
@@ -85,6 +85,11 @@ body{
 .status-content {
     font-size: 0.8em;
     /* font-family: "Ubuntu Mono", sans-serif; */
+}
+
+#audioMute {
+  max-width: 36px;
+  height: auto;
 }
 
 #audioControls {
@@ -154,7 +159,7 @@ body{
         height: 4px;
         background: white;
         position: relative;
-        top: -16px;
+        top: -2px;
         outline: none;
     }
 }
@@ -196,4 +201,3 @@ body{
     }
 
 }
-

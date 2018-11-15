@@ -40,6 +40,11 @@ body{
   margin-top: 0;
 }
 
+#sidebar {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
 #player {
     /* background-color: #aaa; */
     color: #FFF;

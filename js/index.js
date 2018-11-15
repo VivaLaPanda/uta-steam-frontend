@@ -16,21 +16,6 @@ function isString(object){
  * gets info about the current playlist
  */
 function getPlaylistInfo(){
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.open('GET', 'https://VivaLaPanda.moe/api/playing');
-    httpRequest.onload = function(){
-        if(httpRequest.status == 200 ){
-            console.log(httpRequest.response);
-        }
-        else{
-            createErrorMessage(httpRequest.responseText);
-        }
-    }
-    httpRequest.send();
-}
-
-
-function getPlaylistInfo(){
   var httpRequest = new XMLHttpRequest();
   httpRequest.open('GET', 'https://VivaLaPanda.moe/api/playing');
   httpRequest.onload = function(){
@@ -53,6 +38,7 @@ function getPlaylistInfo(){
         playlistRows = playlistRows.join("")
         $('#upcoming').html(playlistRows)
       } else {
+        $('#upcoming').html("")
         $('#queueState').html("Nothing queued")
       }
     }

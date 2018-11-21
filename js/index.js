@@ -24,7 +24,7 @@ function getPlaylistInfo(){
       console.log(response);
       // Set current playing
       if(response.currentSong.url){
-        $('#status-current-song').html("<a target=\"_blank\" href=\"" + response.currentSong.url + "\"> " + response.currentSong.title + "</a>")
+        $('#status-current-song').html("<a target=\"_blank\" rel=\"noreferrer\" href=\"" + response.currentSong.url + "\"> " + response.currentSong.title + "</a>")
       } else {
         $('#status-current-song').html(response.currentSong.title)
       }

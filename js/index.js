@@ -33,7 +33,7 @@ function getPlaylistInfo(){
       if (response.upcoming.length != 0) {
         $('#queueState').html("")
         playlistRows = response.upcoming.map(function(song) {
-          return "<li>" + "<a target=\"_blank\" href=\"" + song.url + "\"> " + song.title + "</a>" + "</li>\n"
+          return "<li>" + "<a target=\"_blank\" rel=\"noreferrer\" href=\"" + song.url + "\"> " + song.title + "</a>" + "</li>\n"
         })
         playlistRows = playlistRows.join("")
         $('#upcoming').html(playlistRows)

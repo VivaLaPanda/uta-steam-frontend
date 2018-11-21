@@ -2,6 +2,10 @@ body{
   background-color: #877ECD;
 }
 
+a {
+  color: lightblue;
+}
+
 #background-art {
   background-image: url("../assets/img/background.webp");
   background-repeat: none;

@@ -69,16 +69,3 @@ function setApiKey(event){
   ga('set', 'userId', apiKey);
   ga('send', 'event', 'Manage', 'setkey', 'Stream play tracking', apiKey);
 }
-
-/**
- * changes the volume whenever the volume slider gets moved
- * @param event the change event.
- */
-function changeVolume(event){
-    var volume = event.target.value;
-    document.audioPlayer.volume = volume/ 100;
-    if(document.audioPlayer.paused){
-        document.audioPlayer.play();
-        hideErrorMessage();
-    }
-}

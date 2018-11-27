@@ -64,7 +64,7 @@ function setup(){
 
     apiKey = localStorage.apiKey;
     $('#apiKey').val(apiKey);
-    ga('set', 'userId', apiKey); 
+    ga('set', 'userId', apiKey);
 
     preload('assets/img/muted.png');
     preload('assets/img/play hover.png');
@@ -112,15 +112,18 @@ function setup(){
         });
         $('#audioStop').click(function () {
             audio.pause();
+            ga('send', 'event', 'Stream', 'stop', 'Stream play tracking');
             audio.src = '';
         });
         $('#audioMute').click(function () {
             audio.muted = !audio.muted;
+            ga('send', 'event', 'Stream', 'mute', 'Stream play tracking', audio.muted);
             this.src = audio.muted ? 'assets/img/muted.png' :
                 'assets/img/not-muted.png';
         });
         $('#audioVolume').on('input change', function () {
             audio.volume = this.value / 100;
+            ga('send', 'event', 'Stream', 'changeVolume', 'Stream play tracking', audio.volume);
         });
     }
     $.bindAudioControls();

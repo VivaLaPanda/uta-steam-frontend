@@ -1,5 +1,9 @@
 var apiKey = "";
 
+window.addEventListener('beforeunload', function(e) {
+  ga('send','pageview'{'sessionControl':'end'});
+});
+
 /**
  * display that song was successfully queued.
  */

@@ -1,7 +1,7 @@
 var apiKey = "";
 
 window.addEventListener('beforeunload', function(e) {
-  ga('send','pageview'{'sessionControl':'end'});
+  ga('send','pageview', {'sessionControl':'end'});
 });
 
 /**

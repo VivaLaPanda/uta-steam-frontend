@@ -107,6 +107,7 @@ function setup(){
             //}
             audio.load();
             audio.play();
+            ga('send', 'event', 'Stream', 'play', 'Stream play tracking');
         });
         $('#audioStop').click(function () {
             audio.pause();

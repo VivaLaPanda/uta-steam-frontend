@@ -23,6 +23,7 @@ function submitToQueueResult(){
  * @param event the click event of the "Queue" button
  */
 function submitToQueue(event){
+    ga('send', 'event', 'Manage', 'queue', 'Stream play tracking');
     var httpRequest = new XMLHttpRequest();
     var inputElement = document.getElementById('song');
     var songUrl = inputElement.value;
@@ -39,6 +40,7 @@ function submitToQueue(event){
  * skips the current song
  */
 function skipSong(event){
+    ga('send', 'event', 'Manage', 'skip', 'Stream play tracking');
     var httpRequest = new XMLHttpRequest();
     httpRequest.open('POST', 'https://VivaLaPanda.moe/api/skip');
     httpRequest.withCredentials = true;
@@ -60,6 +62,8 @@ function skipSong(event){
 function setApiKey(event){
   apiKey = $('#apiKey').val();
   localStorage.apiKey = apiKey;
+  ga('set', 'userId', apiKey);
+  ga('send', 'event', 'Manage', 'setkey', 'Stream play tracking', apiKey);
 }
 
 /**

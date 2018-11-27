@@ -64,6 +64,7 @@ function setup(){
 
     apiKey = localStorage.apiKey;
     $('#apiKey').val(apiKey);
+    ga('set', 'userId', apiKey); 
 
     preload('assets/img/muted.png');
     preload('assets/img/play hover.png');

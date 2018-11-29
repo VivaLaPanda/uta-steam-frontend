@@ -10,6 +10,10 @@ a:hover {
   color: #007bff !important;
 }
 
+.disabled-btn {
+  opacity: 0.25;
+}
+
 .no-webp #background-art {
   background-image: url("../assets/img/background.jpg");
 }
@@ -68,6 +72,10 @@ a:hover {
     filter: alpha(opacity=75); */
     text-align: center;
     width: 100%;
+}
+
+#streamStatus {
+  font-size: .7em;
 }
 
 #status {

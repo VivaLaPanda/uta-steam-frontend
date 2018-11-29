@@ -48,6 +48,7 @@
                     <img id="statusRefresh" alt="Refresh" title="Refresh" src="assets/img/refresh.png">
                     <img id="audioMute" alt="Mute" title="Mute" src="assets/img/not-muted.png">
                     <input id="audioVolume" type="range" min="0" max="100" aria-label="volume slider">
+                    <p id="streamStatus"></p>
                   </div>
                   <div id="status-current-song" class="status-content" style="display: block;">{{current-song}}</div>
                 </div>
@@ -93,22 +94,28 @@
                 <!-- Manage tab content -->
                 <h5>Manage Radio</h5>
                 <hr class="content-seperator"></hr>
+                <p>
+                  This station allows users to queue up their own music if I've given
+                  them access. Just paste in the key that you've been given and then
+                  add new music or skip songs you don't like. If you'd like permission
+                  to queue songs, just contact me on Discord.
+                </p>
                 <div style="text-align: center;">
                   <div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <button class="btn btn-light" type="button" onclick="submitToQueue(event)" id="queue-btn">Queue</button>
+                        <button class="btn btn-success" type="button" onclick="submitToQueue(event)" id="queue-btn">Queue</button>
                       </div>
                       <input type="text" class="form-control" aria-label="Add items to queue" aria-describedby="queue-btn" placeholder="paste song url" name="song" id="song">
                     </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <button class="btn btn-light" type="button" onclick="setApiKey(event)" id="store-key-btn">Store</button>
+                        <button class="btn btn-success" type="button" onclick="setApiKey(event)" id="store-key-btn">Store</button>
                       </div>
                       <input type="text" class="form-control" aria-label="Set your API key" aria-describedby="store-key-btn" placeholder="paste api key" name="apiKey" id="apiKey">
                     </div>
 
-                    <button class="skip btn btn-light" onclick="skipSong(event)">Skip</button>
+                    <button class="skip btn btn-success" onclick="skipSong(event)">Skip</button>
                   </div>
                   <div id="error-message-wrapper">
                     <p id="error-message"></p>

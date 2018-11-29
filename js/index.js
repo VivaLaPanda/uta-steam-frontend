@@ -1,3 +1,4 @@
+var playLock = false;
 window.onload = function(){
     setup();
     getPlaylistInfo();
@@ -88,6 +89,15 @@ function setup(){
           getPlaylistInfo();
         })
         $('#audioPlay').click(function () {
+            if (playLock == true) {
+              return;
+            }
+
+            // Set loading state
+            playLock = true;
+            $('#audioPlay').addClass("disabled-btn")
+            $('#streamStatus').html("Loading...")
+
             if (!audio.canPlayType('audio/mpeg')) {
                 alert("Your browser very probably can't play mp3 streams! Stop using Opera.");
                 return;
@@ -109,8 +119,17 @@ function setup(){
             audio.load();
             audio.play();
             ga('send', 'event', 'Stream', 'play', 'Stream play tracking');
+            setTimeout(function () {
+              // remove loading state
+              $('#streamStatus').html("")
+              $('#audioPlay').removeClass("disabled-btn")
+              playLock = false;
+            }, 9000);
         });
         $('#audioStop').click(function () {
+            $('#streamStatus').html("")
+            $('#audioPlay').removeClass("disabled-btn")
+            playLock = false;
             audio.pause();
             ga('send', 'event', 'Stream', 'stop', 'Stream play tracking');
             audio.src = '';
